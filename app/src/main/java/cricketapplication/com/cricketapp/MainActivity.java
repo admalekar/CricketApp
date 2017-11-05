@@ -27,9 +27,12 @@ public class MainActivity extends AppCompatActivity {
 
         live_match = (Button) findViewById(R.id.Live_Button);
 
+
         live_match.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+
                 Intent intent = new Intent(getApplicationContext(),Match_room.class);
                 startActivity(intent);
 

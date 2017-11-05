@@ -3,14 +3,23 @@ package cricketapplication.com.cricketapp;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.google.firebase.database.ChildEventListener;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 import org.w3c.dom.Text;
+
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map;
+import java.util.Objects;
 
 /**
  * Created by Amey on 05-Nov-17.
@@ -18,7 +27,7 @@ import org.w3c.dom.Text;
 
 
 
-class Match_room extends AppCompatActivity{
+class Match_room extends AppCompatActivity {
 
 
     private Button Send_Button;
@@ -33,7 +42,10 @@ class Match_room extends AppCompatActivity{
     private EditText Text_to_send;
     private TextView sent_text;
     private DatabaseReference root;
-
+    private String tempKey;
+    private String user = "Amey";
+    private String latest_msg;
+    private String latest_msg_name;
 
 
     @Override
@@ -54,7 +66,82 @@ class Match_room extends AppCompatActivity{
         sent_text = findViewById(R.id.What_was_sent);
 
 
-        root = FirebaseDatabase.getInstance().getReference()
+        root = FirebaseDatabase.getInstance().getReference().child("ScrollText");
+
+        sent_text.setKeyListener(null);
+        Send_Button.setOnClickListener(new View.OnClickListener() {
+
+
+            @Override
+            public void onClick(View view) {
+                Map<String, Object> map = new HashMap<String, Object>();
+
+                tempKey = root.push().getKey();
+                root.updateChildren(map);
+
+                DatabaseReference message_root = root.child(tempKey);
+                Map<String, Object> map2 = new HashMap<String, Object>();
+                map2.put("msg", Text_to_send.getText().toString());
+                map2.put("name", user);
+
+
+                message_root.updateChildren(map2);
+
+
+            }
+        });
+
+        Run_1_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Text_to_send.setText("1 run");
+            }
+        });
+
+        root.addChildEventListener(new ChildEventListener() {
+            @Override
+            public void onChildAdded(DataSnapshot dataSnapshot, String s) {
+
+                change_child_convo(dataSnapshot);
+            }
+
+            @Override
+            public void onChildChanged(DataSnapshot dataSnapshot, String s) {
+
+            }
+
+            @Override
+            public void onChildRemoved(DataSnapshot dataSnapshot) {
+
+            }
+
+            @Override
+            public void onChildMoved(DataSnapshot dataSnapshot, String s) {
+
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+
+        });
+    }
+
+
+
+    private void change_child_convo(DataSnapshot dataSnapshot) {
+
+        Iterator i = dataSnapshot.getChildren().iterator();
+        while (i.hasNext()) {
+
+            latest_msg = (String)((DataSnapshot) i.next()).getValue();
+            latest_msg_name = (String)((DataSnapshot) i.next()).getValue();
+            sent_text.setText(latest_msg);
+
+        }
 
     }
+
+
 }
