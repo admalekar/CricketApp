@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+    <EditText
+        android:id="@+id/Text_to_Send"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="57dp"
+        android:ems="10"
+        android:inputType="textPersonName" />
+
+    <Button
+        android:id="@+id/Send_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/Text_to_Send"
+        android:layout_toEndOf="@+id/Text_to_Send"
+        android:text="@string/send" />
+
+    <Button
+        android:id="@+id/Run_1_button"
+        android:layout_width="60dp"
+        android:layout_height="70dp"
+        android:layout_below="@+id/Send_button"
+        android:layout_marginTop="46dp"
+        android:layout_toStartOf="@+id/Text_to_Send"
+        android:text="@string/_1" />
+
+    <Button
+        android:id="@+id/Run_2_button"
+        android:layout_width="60dp"
+        android:layout_height="70dp"
+        android:layout_alignTop="@+id/Run_1_button"
+        android:layout_marginStart="26dp"
+        android:layout_toEndOf="@+id/Run_1_button"
+        android:text="@string/_2" />
+
+    <Button
+        android:id="@+id/Run_3_button"
+        android:layout_width="60dp"
+        android:layout_height="70dp"
+        android:layout_alignTop="@+id/Run_2_button"
+        android:layout_marginStart="36dp"
+        android:layout_toEndOf="@+id/Run_2_button"
+        android:text="@string/_3" />
+
+    <Button
+        android:id="@+id/Run_4_button"
+        android:layout_width="60dp"
+        android:layout_height="70dp"
+        android:layout_alignStart="@+id/Send_button"
+        android:layout_alignTop="@+id/Run_3_button"
+        android:text="@string/_4" />
+
+    <Button
+        android:id="@+id/Run_5_button"
+        android:layout_width="60dp"
+        android:layout_height="70dp"
+        android:layout_alignStart="@+id/Run_1_button"
+        android:layout_centerVertical="true"
+        android:text="@string/_5" />
+
+    <Button
+        android:id="@+id/Run_6_button"
+        android:layout_width="60dp"
+        android:layout_height="70dp"
+        android:layout_alignStart="@+id/Run_2_button"
+        android:layout_alignTop="@+id/Run_5_button"
+        android:text="@string/_6" />
+
+    <Button
+        android:id="@+id/No_ball_button"
+        android:layout_width="60dp"
+        android:layout_height="70dp"
+        android:layout_alignStart="@+id/Run_3_button"
+        android:layout_alignTop="@+id/Run_6_button"
+        android:text="@string/no" />
+
+    <Button
+        android:id="@+id/Wide_ball_button"
+        android:layout_width="60dp"
+        android:layout_height="70dp"
+        android:layout_alignStart="@+id/Run_4_button"
+        android:layout_alignTop="@+id/No_ball_button"
+        android:text="@string/wide" />
+
+    <Button
+        android:id="@+id/Wicket_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/Run_6_button"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="34dp"
+        android:text="@string/wicket" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/Wicket_button"
+        android:layout_marginTop="60dp">
+
+        <EditText
+            android:id="@+id/What_was_sent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="textMultiLine" />
+
+    </ScrollView>
+
+</RelativeLayout>

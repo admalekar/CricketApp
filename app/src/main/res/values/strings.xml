@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Cricket App</string>
+    <string name="wicket">Wicket</string>
+    <string name="send">Send</string>
+    <string name="_1">1</string>
+    <string name="wide">Wide</string>
+    <string name="no">NO</string>
+    <string name="_6">6</string>
+    <string name="_5">5</string>
+    <string name="_2">2</string>
+    <string name="_3">3</string>
+    <string name="_4">4</string>
+</resources>
