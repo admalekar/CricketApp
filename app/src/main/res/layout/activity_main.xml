@@ -7,24 +7,26 @@
     tools:context="cricketapplication.com.cricketapp.MainActivity">
 
     <Button
-        android:id="@+id/Upcoming"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="14dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="65dp"
-        android:text="Upcoming"
-        app:layout_constraintEnd_toStartOf="@+id/Live_Button"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
         android:id="@+id/Live_Button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="79dp"
+        android:layout_marginEnd="148dp"
+        android:layout_marginTop="65dp"
         android:text="Live"
-        app:layout_constraintBottom_toBottomOf="@+id/Upcoming"
+        app:layout_constraintBottom_toTopOf="@+id/imageButton"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/Upcoming"
-        app:layout_constraintTop_toTopOf="@+id/Upcoming" />
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/imageButton"
+        android:layout_width="130dp"
+        android:layout_height="130dp"
+        android:layout_marginBottom="193dp"
+        android:scaleType="fitCenter"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Live_Button"
+        app:srcCompat="@drawable/cric_img" />
 </android.support.constraint.ConstraintLayout>

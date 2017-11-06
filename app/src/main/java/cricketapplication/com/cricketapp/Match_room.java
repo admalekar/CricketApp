@@ -39,6 +39,7 @@ class Match_room extends AppCompatActivity {
     private Button Run_6_button;
     private Button No_ball_button;
     private Button Wide_ball_button;
+    private Button Wicket_button;
     private EditText Text_to_send;
     private TextView sent_text;
     private DatabaseReference root;
@@ -51,7 +52,7 @@ class Match_room extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.match_room_layout);
+        setContentView(R.layout.match_room_layout3);
 
         Send_Button = findViewById(R.id.Send_button);
         Run_1_button = findViewById(R.id.Run_1_button);
@@ -62,6 +63,7 @@ class Match_room extends AppCompatActivity {
         Run_6_button = findViewById(R.id.Run_6_button);
         No_ball_button = findViewById(R.id.No_ball_button);
         Wide_ball_button = findViewById(R.id.Wide_ball_button);
+        Wicket_button = findViewById(R.id.Wicket_button);
         Text_to_send = findViewById(R.id.Text_to_Send);
         sent_text = findViewById(R.id.What_was_sent);
 
@@ -97,6 +99,53 @@ class Match_room extends AppCompatActivity {
                 Text_to_send.setText("1 run");
             }
         });
+
+        Run_2_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Text_to_send.setText("2 runs");
+            }
+        });
+        Run_3_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Text_to_send.setText("3 runs");
+            }
+        });
+        Run_4_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Text_to_send.setText("4 runs");
+            }
+        });
+        Run_5_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Text_to_send.setText("5 runs");
+            }
+        });
+        Run_6_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Text_to_send.setText("6 runs");
+            }
+        });
+
+        No_ball_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Text_to_send.setText("No Ball");
+            }
+        });
+
+        Wicket_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Text_to_send.setText("Wicket!");
+            }
+        });
+
+
 
         root.addChildEventListener(new ChildEventListener() {
             @Override
