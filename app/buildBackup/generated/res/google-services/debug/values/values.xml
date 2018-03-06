@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="default_web_client_id" translatable="false">186251594851-ias4ihrthbloorcrt961a8jkro5b5u7o.apps.googleusercontent.com</string>
+    <string name="firebase_database_url" translatable="false">https://cricket-project-680a1.firebaseio.com</string>
+    <string name="gcm_defaultSenderId" translatable="false">186251594851</string>
+    <string name="google_api_key" translatable="false">AIzaSyCQaq7iDH8RPrvytQE3b4QUYwocn5K45RY</string>
+    <string name="google_app_id" translatable="false">1:186251594851:android:72d26fe3bf6fe409</string>
+    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyCQaq7iDH8RPrvytQE3b4QUYwocn5K45RY</string>
+    <string name="google_storage_bucket" translatable="false">cricket-project-680a1.appspot.com</string>
+    <string name="project_id" translatable="false">cricket-project-680a1</string>
+</resources>
